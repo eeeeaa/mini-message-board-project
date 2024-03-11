@@ -9,17 +9,6 @@ const usersRouter = require("./routes/users");
 
 const app = express();
 
-const mongoose = require("mongoose");
-require("dotenv").config();
-
-const connectionString = process.env.ATLAS_URI || "";
-mongoose.set("strictQuery", false);
-
-main().catch((err) => console.log(err));
-async function main() {
-  await mongoose.connect(connectionString);
-}
-
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
